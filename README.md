@@ -1,24 +1,45 @@
-# README
+# _Mario's Foods_
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+#### _Week 11 Independent Project at Epicodus_
 
-Things you may want to cover:
+#### By _**Jessica Doss**_
 
-* Ruby version
+## Description
 
-* System dependencies
+_An online grocery store that carries specialty products._
 
-* Configuration
+## Setup/Installation Requirements
 
-* Database creation
+* _Clone this repository_
+* _Open terminal and type 'git clone [git link]'_
+* _Navigate to project directory using cd in terminal_
+* _Open project in text editor (atom .)_
+* _Type 'bundle install' in terminal to load Gems_
+* _To run tests, open terminal and run 'rspec'_
+* _Type "ruby app.rb" to run website on localhost._
+* _Open your desired browser and type in "http://localhost:4567/"_
 
-* Database initialization
+## Known Bugs
 
-* How to run the test suite
+_No known bugs_
 
-* Services (job queues, cache servers, search engines, etc.)
+## Support and contact details
 
-* Deployment instructions
+_Please contact us if you have any issues at: doss.jessicam@gmail.com_
 
-* ...
+## Technologies Used
+
+* Ruby
+* Rails
+* Postgres
+* RubyGems
+* Atom
+* GitHub
+
+## Acknowledgements
+_Thank you to my teachers and partners this week. I wouldn't be where I am without you all._
+
+### License
+_This software is licensed under MIT license._
+
+Copyright (c) 2019 **_Jessica Doss_**
