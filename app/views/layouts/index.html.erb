@@ -1,9 +1,29 @@
 <h3>Products</h3>
-
-<ul>
-  <% @products.each do |product| %>
-  <li><%= product.name %></li>
-  <% end %>
-</ul>
+<div class="row">
+ <div class="col-md-6">
+   <table class="table">
+     <thead class="thead-light">
+       <tr>
+         <th scope="col">Name</th>
+         <th scope="col">Country</th>
+         <th scope="col">Cost</th>
+         <th scope="col">&nbsp;</th>
+         <th scope="col">&nbsp;</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @products.each do |product| %>
+      <tr>
+        <li><%= product.name %></li>
+        <td><%= product.country_origin %></td>
+        <td><%= number_to_currency(product.cost, :unit => "$") %></td>
+        <th>update</th>
+        <th>delete</th>
+      </tr>
+      <% end %>
+    </tbody>
+   </table>
+ </div>
+</div>
 
 <%= link_to 'Add product', new_product_path %>
