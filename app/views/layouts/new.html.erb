@@ -1,0 +1,24 @@
+<h3>Add new product form</h3>
+
+<%= form_for @product do |f| %>
+  <div class="">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="">
+    <%= f.label :country_origin %>
+    <%= f.text_field :country_origin %>
+  </div>
+
+  <div class="">
+    <%= f.label :cost %>
+    <%= f.text_field :cost %>
+  </div>
+
+  <div class="">
+
+    <%= f.submit "Add" %>
+  </div>
+
+<% end %>
