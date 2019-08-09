@@ -1,4 +1,13 @@
 <h3>Products</h3>
+<% if flash[:notice] %>
+  <div class="notice alert alert-primary alert-dismissible fade show" role="alert">
+    <%= flash[:notice] %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<% end %>
+
 <div class="row">
  <div class="col-md-6">
    <table class="table">
@@ -17,8 +26,8 @@
         <li><%= product.name %></li>
         <td><%= product.country_origin %></td>
         <td><%= number_to_currency(product.cost, :unit => "$") %></td>
-        <th>update</th>
-        <th>delete</th>
+        <th><%= link_to 'Update', edit_product_path(product), class: "btn btn-secondary btn-sm float-right" %></th>
+        <th><%= button_to "Delete", { action: "destroy", id: product.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary btn-sm float-right" %></th>
       </tr>
       <% end %>
     </tbody>
