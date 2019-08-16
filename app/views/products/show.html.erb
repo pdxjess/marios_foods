@@ -1,5 +1,13 @@
-<h3><%= @product.name %></h3>
+<h3>Add new product form</h3>
 
-<%= link_to 'Add review', new_product_review_path(@product)  %>
+<% if flash[:notice] %>
+  <%= render 'flash_msg-failed' %>
+<% end %>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= render 'products_form' %>
+  </div>
+</div>
 
 <%= link_to 'Go Back', products_path %>

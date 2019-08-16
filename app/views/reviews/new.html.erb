@@ -1,0 +1,55 @@
+<h3><%= link_to '⬅️ ', product_path(@product) %>Leave a review for <%= @product.name %></h3>
+<%= form_with(model: @review, url: product_reviews_path) do |f| %>
+<div class="row">
+  <div class="col-md-6">
+    <div class="form-group">
+      <%= f.label :author %>
+      <%= f.text_field :author, class: "form-control" %>
+    </div>
+    <div class="form-group">
+          <%= f.label :content_body %>
+          <%= f.text_area :content_body, class: "form-control", size: "24x6" %>
+        </div>
+
+        <div class="form-group">
+          <%= f.submit class: "btn btn-primary" %>
+        </div>
+
+      </div>
+
+      <div class="col-md-2">
+        <label>Rating</label>
+        <div class="card">
+          <div class="card-body">
+            <div>
+              <%= f.radio_button(:rating, "1") %>
+              <%= f.label(:rating_star, "⭐") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:rating, "2") %>
+              <%= f.label(:rating_star, "⭐⭐") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:rating, "3") %>
+              <%= f.label(:rating_star, "⭐⭐⭐") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:rating, "4") %>
+              <%= f.label(:rating_star, "⭐⭐⭐⭐") %>
+            </div>
+
+            <div>
+              <%= f.radio_button(:rating, "5") %>
+              <%= f.label(:rating_star, "⭐⭐⭐⭐⭐") %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+    <% end %>
