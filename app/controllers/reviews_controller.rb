@@ -1,5 +1,9 @@
 class ReviewsController < ApplicationController
+  before_action :get_product
 
+  def new
+    @review = @product.reviews.new
+  end
 
   def create
     if @review = @product.reviews.create(permit_params)
@@ -7,11 +11,6 @@ class ReviewsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def new
-    @product = Product.find(params[:product_id].to_i)
-    @review = @product.reviews.new
   end
 
   def edit
@@ -32,6 +31,7 @@ class ReviewsController < ApplicationController
   end
 
   def permit_params
-    params.permit(:author, :content_body, :rating, :product_id)
+    params[:review][:product_id]=params[product_id]
+    params.require(:review).permit(:author, :content_body, :rating, :product_id)
   end
 end
