@@ -1,25 +1,71 @@
+
 <h3>Highest Quality</h3>
 <p>These are our top 3 ranked products that deserve a home in your pantry</p>
-<div class="col-md-3 mx-auto">
-  <div clas="card">
-    <div class="card-body">
-      1
+<div class="row">
+  <div class="col-md-3 mx-auto">
+    <div clas="card">
+      <div class="card-body">
+        1
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        1
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        1
+      </div>
     </div>
   </div>
 </div>
 
-<div class="col-md-3 mx-auto">
-  <div class="card">
-    <div class="card-body">
-      1
+<h3>New Product Alert!</h3>
+<p>These are our three newest products.</p>
+<div class="row">
+  <div class="col-md-3 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        1
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        1
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-3 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        1
+      </div>
     </div>
   </div>
 </div>
 
-<div class="col-md-3 mx-auto">
-  <div class="card">
-    <div class="card-body">
-      1
+<h3>Shop Local</h3>
+<p>These items are made right here in Portland</p>
+
+<div class="row">
+  <% @products.made_in_usa.each do |product| %>
+  <div class="col-md-3 mx-auto">
+    <div class="card">
+      <div class="card-body">
+        <%= product.name %>
+      </div>
     </div>
   </div>
+  <% end %>
 </div>
