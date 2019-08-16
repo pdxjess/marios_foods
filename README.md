@@ -1,6 +1,6 @@
 # _Mario's Foods_
 
-#### _Week 11 Independent Project at Epicodus_
+#### _Week 11 and 12 Independent Project at Epicodus_
 
 #### By _**Jessica Doss**_
 
