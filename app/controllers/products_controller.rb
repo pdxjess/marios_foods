@@ -40,6 +40,9 @@ class ProductsController < ApplicationController
     @product.delete
     redirect_to products_path
   end
+  
+  def featured
+  end
 
   private
   def get_product
