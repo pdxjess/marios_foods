@@ -1,4 +1,4 @@
-<h3><%= link_to '⬅️ ', product_path(@product) %>Leave a review for <%= @product.name %></h3>
+<h3><%= link_to '&larr;', product_path(@product) %>Leave a review for <%= @product.name %></h3>
 <%= form_with(model: @review, url: product_reviews_path) do |f| %>
 <div class="row">
   <div class="col-md-6">
@@ -23,27 +23,27 @@
           <div class="card-body">
             <div>
               <%= f.radio_button(:rating, "1") %>
-              <%= f.label(:rating_star, "⭐") %>
+              <%= f.label(:rating_star, "🔺") %>
             </div>
 
             <div>
               <%= f.radio_button(:rating, "2") %>
-              <%= f.label(:rating_star, "⭐⭐") %>
+              <%= f.label(:rating_star, "🔺🔺") %>
             </div>
 
             <div>
               <%= f.radio_button(:rating, "3") %>
-              <%= f.label(:rating_star, "⭐⭐⭐") %>
+              <%= f.label(:rating_star, "🔺🔺🔺") %>
             </div>
 
             <div>
               <%= f.radio_button(:rating, "4") %>
-              <%= f.label(:rating_star, "⭐⭐⭐⭐") %>
+              <%= f.label(:rating_star, "🔺🔺🔺🔺") %>
             </div>
 
             <div>
               <%= f.radio_button(:rating, "5") %>
-              <%= f.label(:rating_star, "⭐⭐⭐⭐⭐") %>
+              <%= f.label(:rating_star, "🔺🔺🔺🔺🔺") %>
             </div>
           </div>
         </div>
