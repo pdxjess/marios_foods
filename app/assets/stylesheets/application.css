@@ -1,1 +1,26 @@
  @import "bootstrap";
+ *,
+ *::after,
+ *::before {
+   margin: 0;
+   padding: 0;
+   box-sizing: inherit; }
+body {
+  background-color: white;
+  box-sizing: border-box; }
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /* font-size: 16px; */
+  line-height: 1.7;
+  color: #777;
+  padding: 3rem; }
+h3 {
+  text-align: center;
+  font-size: 40px;
+}
+ {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

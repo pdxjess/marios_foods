@@ -11,3 +11,17 @@
 </div>
 
 <%= link_to 'Go Back', products_path %>
+<%if @product.reviews.any?%>
+
+      <h3>Reviews for <%= @product.author %></h3>
+
+      <% @product.reviews.each do |review| %>
+      <ul>
+        <li>
+          <%= link_to review.author, product_review_path(@product, review) %>
+        </li>
+      </ul>
+      <% end %>
+      <% else %>
+      <p>No current reviews. Be the first and leave a review!</p>
+      <% end %>

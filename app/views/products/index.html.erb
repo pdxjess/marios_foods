@@ -1,4 +1,4 @@
-<h3>Products</h3>
+<h3>Coffee Products</h3>
 <% if flash[:notice] %>
   <div class="notice alert alert-primary alert-dismissible fade show" role="alert">
     <%= flash[:notice] %>
@@ -8,29 +8,25 @@
   </div>
 <% end %>
 
+<% if @products.any? %>
+            <ul>
+              <%@products.each do |product| %>
+              <li><%=link_to product.name, product_path(product)%></li>
+              <%end%>
+            </ul>
+            <%else%>
+            <p>There are no current products</p>
+            <%end%>
 <div class="row">
  <div class="col-md-6">
    <table class="table">
      <thead class="thead-light">
        <tr>
-         <th scope="col">Name</th>
-         <th scope="col">Country</th>
-         <th scope="col">Cost</th>
          <th scope="col">&nbsp;</th>
          <th scope="col">&nbsp;</th>
         </tr>
       </thead>
-      <tbody>
-        <% @products.each do |product| %>
-      <tr>
-        <li><%= product.name %></li>
-        <td><%= product.country_origin %></td>
-        <td><%= number_to_currency(product.cost, :unit => "$") %></td>
-        <th><%= link_to 'Update', edit_product_path(product), class: "btn btn-secondary btn-sm float-right" %></th>
-        <th><%= button_to "Delete", { action: "destroy", id: product.id }, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-secondary btn-sm float-right" %></th>
-      </tr>
-      <% end %>
-    </tbody>
+
    </table>
  </div>
 </div>
