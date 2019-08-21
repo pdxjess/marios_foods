@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
        flash[:notice] = "Product successfully added!"
        redirect_to products_path
      else
-       render :new
+       render :show
      end
    end
 
@@ -48,6 +48,6 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-    params.require(:product).permit(:name, :description, :cost, :country_of_origin)
+    params.require(:product).permit(:name, :cost, :country_of_origin)
   end
 end
