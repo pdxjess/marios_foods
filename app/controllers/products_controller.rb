@@ -1,60 +1,53 @@
 class ProductsController < ApplicationController
-  before_action :get_product, only: [:edit, :show, :update]
 
   def index
     @products = Product.all
+    render :index
   end
 
   def create
-    @product = Product.new(params_permit)
-    if @product.save
-      flash[:notice] = "Product successfully added"
-      redirect_to products_path
-    else
-      flash[:notice] = "Problem adding product"
-      render :new
-    end
-  end
+     @product = Product.new(product_params)
+     if @product.save
+       flash[:notice] = "Product successfully added!"
+       redirect_to products_path
+     else
+       render :new
+     end
+   end
 
   def new
     @product = Product.new
+    render :new
   end
 
   def edit
+    @product = Product.find(params[:id])
+    render :edit
   end
 
   def show
+    @product = Product.find(params[:id])
+    render :show
   end
 
   def update
-    if @product.update(params_permit)
-      flash[:notice] = "Product successfully updated"
+    @product= Product.find(params[:id])
+    if @product.update(product_params)
       redirect_to products_path
     else
-      flash[:notice] = "Problem updating product"
       render :edit
     end
   end
 
   def destroy
-    params.permit(:id)
-    Product.find(params[:id].to_i).delete
-    redirect_to products_path
-  end
+   @product = Product.find(params[:id])
+   @product.destroy
+   redirect_to products_path
+ end
 
-  def featured
-    @products = Product.all
-  end
-
-  def seed
-  end
 
   private
-  def get_product
-    @product = Product.find(params[:id])
-  end
-
-  def params_permit
-    params.require(:product).permit(:name, :country_of_origin, :cost)
+    def product_params
+    params.require(:product).permit(:name, :description, :cost, :country_of_origin)
   end
 end
